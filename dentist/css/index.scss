@@ -1,0 +1,127 @@
+@charset "utf-8";
+$top-text-color:#0a2b45;
+$top-icon-bg:#009ad5;
+$line:#bfbfbf;
+$text-color:#064272;
+$bg-color:#fff;
+$mini-text-color:#6f8fa8;
+$designWidth:750;//设计稿尺寸
+@function px2rem($px){
+  @return $px*320/$designWidth/20 + rem;
+}
+body{font-family: "Microsoft YaHei UI";background-color: #009dd8;}
+body,ul,li,p{
+  margin: 0;
+  padding: 0;
+}
+.wrap{
+  width: px2rem(570);
+  padding: 0 px2rem(30);
+  background-color: $bg-color;
+  font-size: 0;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+}
+/*top-title*/
+header{
+  width: 100%;
+  height: px2rem(124);
+  border-bottom: px2rem(1) solid $line;
+  position: relative;
+  margin-top: px2rem(22);
+  p.top-title{
+    font-size:  px2rem(54);
+    line-height: px2rem(124);
+    color: $top-text-color;
+    overflow: hidden;
+    display: inline-block;
+  }
+  div.top-icon{
+    width: px2rem(69);
+    height:px2rem(69);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform:translateY(-50%);
+    background: url("../img/dentist-teeth.png") center no-repeat;
+    background-size: 50%;
+    background-color: $top-icon-bg;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  }
+}
+/*main-text*/
+div.main-text{
+  color:$text-color;
+  margin-top: px2rem(30);
+  letter-spacing: px2rem(2);
+  text-align: justify;
+  font-size: px2rem(22);
+}
+/*banner*/
+img.banner{
+  object-fit: cover;
+  height: px2rem(222);
+  margin-top: px2rem(20);
+  width: 100%;
+}
+/*line*/
+div.line{
+  height: px2rem(1);
+  background-color: $line;
+  margin: px2rem(30) 0;
+}
+.list-title{font-size: px2rem(36);
+  letter-spacing: px2rem(2);
+  color:$top-text-color;
+  margin-bottom: px2rem(30);
+}
+/*list*/
+.main-list{
+  a{display: inline-block;overflow: hidden;
+  text-decoration: none;font-size: 0}
+  li{
+    position: relative;
+  }
+  .list-line{
+    height: px2rem(1);
+    background-color: $line;
+  }
+  li:not(.list-line):after{
+    content: "";
+    display: inline-block;
+    width: px2rem(10);
+    height: px2rem(14);
+    background: url("../img/right-icon.png") center no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+  }
+  :not(.list-line){
+    height: px2rem(89);
+    display: flex;
+    align-items: center;
+    div{display:inline-flex;}
+    .items-title{
+      display: inline-block;
+      font-size: px2rem(26);
+      color: $text-color;
+      width: px2rem(160);
+      height: px2rem(48);
+      border-radius: px2rem(30);
+      background-color: #f0f6fd;
+      text-align: center;
+      line-height:px2rem(48);
+      margin-right: px2rem(15);
+    }
+    .items-info{
+      font-size: px2rem(18);
+      color:$mini-text-color;
+      text-overflow: ellipsis;
+      width: px2rem(285);
+      letter-spacing: px2rem(2);
+    }
+  }
+}
