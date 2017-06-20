@@ -71,6 +71,7 @@ div.line {
 .main-list a {
   display: inline-block;
   overflow: hidden;
+  width: 100%;
   text-decoration: none;
   font-size: 0; }
 .main-list li {
